@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const { getDateTime } = require('./db');
 
 const express = require('express');

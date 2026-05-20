@@ -2,9 +2,11 @@ const fs = require('fs');
 
 const { Pool } = require('pg');
 
-databaseUrl =
+console.log(`ENV: ${process.env.DATABASE_URL}`)
+
+const databaseUrl =
   process.env.DATABASE_URL ||
-  fs.readFileSync(process.env.DATABASE_URL_FILE, 'utf8');
+  fs.readFileSync(process.env.DATABASE_URL, 'utf8');
 
 const pool = new Pool({
   connectionString: databaseUrl,
