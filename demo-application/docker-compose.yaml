@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  postgres_db:
+    image: postgres
+    restart: always
+    container_name: demo-postgres-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: demo-app-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
